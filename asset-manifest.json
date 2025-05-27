@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/tutor-app/static/css/main.fa92664b.css",
-    "main.js": "/tutor-app/static/js/main.71edae42.js",
-    "static/media/postgres.svg": "/tutor-app/static/media/postgres.ae92b576b8ea41666538c0756df27969.svg",
-    "static/media/python.svg": "/tutor-app/static/media/python.13d5b230d0e20e4775ddab47ba00602b.svg",
-    "static/media/openai.svg": "/tutor-app/static/media/openai.4f993b4dd057d61800f0afc44108d9c0.svg",
-    "static/media/react.svg": "/tutor-app/static/media/react.e68b35f4774979ae220b1d5d7b345b00.svg",
-    "static/media/typescript.svg": "/tutor-app/static/media/typescript.a6305a733dd55243980aec55f96f70c5.svg",
-    "index.html": "/tutor-app/index.html",
-    "static/media/fastapi.svg": "/tutor-app/static/media/fastapi.6c84dc4ea9626837be0ce2c5523b6d52.svg",
-    "main.fa92664b.css.map": "/tutor-app/static/css/main.fa92664b.css.map",
-    "main.71edae42.js.map": "/tutor-app/static/js/main.71edae42.js.map"
+    "main.css": "/tutor-app-demo/static/css/main.fa92664b.css",
+    "main.js": "/tutor-app-demo/static/js/main.6252d0c6.js",
+    "static/media/postgres.svg": "/tutor-app-demo/static/media/postgres.ae92b576b8ea41666538c0756df27969.svg",
+    "static/media/python.svg": "/tutor-app-demo/static/media/python.13d5b230d0e20e4775ddab47ba00602b.svg",
+    "static/media/openai.svg": "/tutor-app-demo/static/media/openai.4f993b4dd057d61800f0afc44108d9c0.svg",
+    "static/media/react.svg": "/tutor-app-demo/static/media/react.e68b35f4774979ae220b1d5d7b345b00.svg",
+    "static/media/typescript.svg": "/tutor-app-demo/static/media/typescript.a6305a733dd55243980aec55f96f70c5.svg",
+    "index.html": "/tutor-app-demo/index.html",
+    "static/media/fastapi.svg": "/tutor-app-demo/static/media/fastapi.6c84dc4ea9626837be0ce2c5523b6d52.svg",
+    "main.fa92664b.css.map": "/tutor-app-demo/static/css/main.fa92664b.css.map",
+    "main.6252d0c6.js.map": "/tutor-app-demo/static/js/main.6252d0c6.js.map"
   },
   "entrypoints": [
     "static/css/main.fa92664b.css",
-    "static/js/main.71edae42.js"
+    "static/js/main.6252d0c6.js"
   ]
 }
