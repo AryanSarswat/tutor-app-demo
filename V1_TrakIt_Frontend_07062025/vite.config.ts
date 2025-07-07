@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/V1_TrakIt_Frontend_07062025/',
+  base: '/tutor-app-demo/',
 });
