@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Check, Flag, Mail, ArrowRight, Smartphone, Star } from 'lucide-react';
+import TrakitLogo from './assets/Trakit_Logo_Main copy.png';
+import HeroImage from './assets/almostgaveup3.png';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -19,7 +21,7 @@ function App() {
             {/* Left - Logo */}
             <div className="flex-shrink-0">
               <img 
-                src="/Trakit_Logo_Main copy.png" 
+                src={TrakitLogo} 
                 alt="TrakIt Logo" 
                 className="h-8 sm:h-10 lg:h-12 w-auto"
               />
@@ -111,7 +113,7 @@ function App() {
                   {/* Clean Aesthetic Image */}
                   <div className="relative">
                     <img 
-                      src="/almostgaveup3.png"
+                      src={HeroImage}
                       alt="Mother and daughter learning together"
                       className="w-full h-auto object-contain rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                     />
@@ -207,7 +209,7 @@ function App() {
             {/* TrakIt Logo */}
             <div className="mt-6">
               <img 
-                src="/Trakit_Logo_Main copy.png" 
+                src={TrakitLogo} 
                 alt="TrakIt Logo" 
                 className="h-8 sm:h-10 lg:h-12 w-auto mx-auto"
               />
