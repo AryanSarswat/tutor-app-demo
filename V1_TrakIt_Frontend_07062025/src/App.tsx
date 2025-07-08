@@ -3,13 +3,44 @@ import { Check, Flag, Mail, ArrowRight, Smartphone, Star } from 'lucide-react';
 import MotherAndDaughter from './assets/MotherDaughter_Cropped.jpg';
 import TrakItLogo from './assets/Main_logo.jpg';
 
+
+
 function App() {
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw5LsHPWAM7HBSBV25BHL8RDH7twZ3-FY8X3r2VdwI1BLUullWsGZ9qwrvu3bUWaoD9Tg/exec';
+  const phoneNumber = "6580101713";
   const [email, setEmail] = useState('');
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle email submission
-    console.log('Email submitted:', email);
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Important for Google Apps Script
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          timestamp: new Date().toISOString(),
+          source: 'website'
+        })
+      });
+
+      setEmail('');
+    } catch (error) {
+      console.error('Error submitting email:', error);
+      alert('There was an error submitting your email. Please check your internet connection.');
+    }
+  };
+
+  const handleClaimSpotClick = () => {
+    console.log('Claim your spot now button clicked!');
+    // Add your logic here for "Claim your spot now"
+  };
+
+  const handleGetInTouchClick = () => {
+    const whatsappUrl = `https://wa.me/${phoneNumber}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -46,7 +77,10 @@ function App() {
               </div>
               
               {/* CTA Button */}
-              <button className="bg-neon-gradient text-navy px-4 sm:px-6 py-2 rounded-lg font-bold text-sm sm:text-base hover:shadow-neon-hover transition-all duration-300 hover:scale-105 whitespace-nowrap group-hover:shadow-neon-rich">
+              <button 
+                className="bg-neon-gradient text-navy px-4 sm:px-6 py-2 rounded-lg font-bold text-sm sm:text-base hover:shadow-neon-hover transition-all duration-300 hover:scale-105 whitespace-nowrap group-hover:shadow-neon-rich"
+                onClick={handleClaimSpotClick}
+              >
                 <span className="hidden sm:inline">Claim Your Spot Now</span>
                 <span className="sm:hidden">Claim Spot</span>
               </button>
@@ -199,7 +233,10 @@ function App() {
 
           {/* CTA Buttons Below Platform */}
           <div className="text-center">
-            <button className="bg-neon-gradient text-navy px-6 py-3 rounded-lg font-bold text-base hover:shadow-neon-hover transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 mb-4">
+            <button 
+              className="bg-neon-gradient text-navy px-6 py-3 rounded-lg font-bold text-base hover:shadow-neon-hover transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 mb-4"
+              onClick={handleGetInTouchClick}
+            >
               Let's Get in Touch
               <ArrowRight className="w-5 h-5" />
             </button>
