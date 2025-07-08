@@ -6,7 +6,7 @@ import TrakItLogo from './assets/Main_logo.jpg';
 
 
 function App() {
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw5LsHPWAM7HBSBV25BHL8RDH7twZ3-FY8X3r2VdwI1BLUullWsGZ9qwrvu3bUWaoD9Tg/exec';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwnL1ClVadGeo7S_ay9Rhcn4bz5mlwSPSU_jcnFy4ZgNpIiMdVXz3q6x15vf7fGQCbl9g/exec';
   const phoneNumber = "6580101713";
   const [email, setEmail] = useState('');
 
