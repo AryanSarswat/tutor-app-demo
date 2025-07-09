@@ -9,6 +9,7 @@ function App() {
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwnL1ClVadGeo7S_ay9Rhcn4bz5mlwSPSU_jcnFy4ZgNpIiMdVXz3q6x15vf7fGQCbl9g/exec';
   const phoneNumber = "6580101713";
   const [email, setEmail] = useState('');
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,6 +28,7 @@ function App() {
       });
 
       setEmail('');
+      setIsDialogOpen(true);
     } catch (error) {
       console.error('Error submitting email:', error);
       alert('There was an error submitting your email. Please check your internet connection.');
@@ -263,6 +265,21 @@ function App() {
           </p>
         </div>
       </footer>
+
+      {isDialogOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-8 max-w-sm mx-auto text-center">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Email Submitted!</h2>
+            <p className="text-gray-600 mb-6">Thank you for your interest. We will be in touch with you shortly.</p>
+            <button
+              onClick={() => setIsDialogOpen(false)}
+              className="bg-neon-gradient text-navy px-6 py-3 rounded-lg font-bold text-base hover:shadow-neon-hover transition-all duration-300 hover:scale-105"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
