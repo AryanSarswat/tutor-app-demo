@@ -10,9 +10,11 @@ function App() {
   const phoneNumber = "6580101713";
   const [email, setEmail] = useState('');
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
@@ -28,10 +30,12 @@ function App() {
       });
 
       setEmail('');
+      setIsLoading(false);
       setIsDialogOpen(true);
     } catch (error) {
       console.error('Error submitting email:', error);
       alert('There was an error submitting your email. Please check your internet connection.');
+      setIsLoading(false);
     }
   };
 
@@ -128,10 +132,24 @@ function App() {
                   />
                   <button
                     type="submit"
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-neon-gradient text-navy px-6 py-3 rounded-lg font-bold text-base hover:shadow-neon-hover transition-all duration-300 hover:scale-105 inline-flex items-center gap-2 whitespace-nowrap border-2 border-white shadow-sm"
+                    className={`absolute right-3 top-1/2 transform -translate-y-1/2 px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 inline-flex items-center gap-2 whitespace-nowrap border-2 border-white shadow-sm ${
+                      isLoading
+                        ? 'bg-green-500 text-white cursor-not-allowed'
+                        : 'bg-neon-gradient text-navy hover:shadow-neon-hover hover:scale-105'
+                    }`}
+                    disabled={isLoading}
                   >
-                    Try it for Free Today
-                    <ArrowRight className="w-4 h-4" />
+                    {isLoading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        Try it for Free Today
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    )}
                   </button>
                 </div>
               </form>
