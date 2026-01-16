@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+fimport React, { useState } from 'react';
 import { Check, Flag, Mail, ArrowRight, Smartphone, Star } from 'lucide-react';
 import MotherAndDaughter from './assets/MotherDaughter_Cropped.jpg';
 import TrakItLogo from './assets/Main_logo.jpg';
@@ -279,7 +279,7 @@ function App() {
       <footer className="bg-black py-4 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 TrakIt. All rights reserved. Singapore born initiative 🇸🇬
+            © 2026 TrakIt. All rights reserved. Singapore born initiative 🇸🇬
           </p>
         </div>
       </footer>
