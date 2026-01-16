@@ -41,7 +41,7 @@ function App() {
 
   const handleClaimSpotClick = () => {
     console.log('Claim your spot now button clicked!');
-    // Add your logic here for "Claim your spot now"
+    // TODO: Implement logic for "Claim your spot now"
   };
 
   const handleGetInTouchClick = () => {
@@ -57,13 +57,13 @@ function App() {
           <div className="flex items-center justify-between gap-2 sm:gap-4">
             {/* Left - Logo */}
             <div className="flex-shrink-0">
-              <img 
-                src={TrakItLogo} 
-                alt="TrakIt Logo" 
+              <img
+                src={TrakItLogo}
+                alt="TrakIt Logo"
                 className="h-8 sm:h-10 lg:h-12 w-auto"
               />
             </div>
-            
+
             {/* Right - Promotional Content in Black Block */}
             <div className="bg-black rounded-xl px-4 sm:px-6 py-3 flex items-center gap-3 sm:gap-4 group transition-all duration-300 group-hover:shadow-neon-block">
               {/* Promotional Text */}
@@ -73,7 +73,7 @@ function App() {
                     Looking For First 50 Tutors - Help Shape TrakIt & Get Early Rewards
                   </span>
                 </div>
-                
+
                 {/* Mobile version - shorter text */}
                 <div className="sm:hidden flex items-center">
                   <span className="font-bold text-xs text-white tracking-wide">
@@ -81,9 +81,9 @@ function App() {
                   </span>
                 </div>
               </div>
-              
+
               {/* CTA Button */}
-              <button 
+              <button
                 className="bg-neon-gradient text-navy px-4 sm:px-6 py-2 rounded-lg font-bold text-sm sm:text-base hover:shadow-neon-hover transition-all duration-300 hover:scale-105 whitespace-nowrap group-hover:shadow-neon-rich"
                 onClick={handleClaimSpotClick}
               >
@@ -111,10 +111,10 @@ function App() {
                   <span className="absolute inset-0 bg-neon-green/60 transform skew-x-1 rotate-1 rounded-sm highlighter-texture"></span>
                 </span> Your Child's Progress Now.
               </h1>
-              
+
               {/* Enhanced paragraph with black bold accents */}
               <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                Get real-time, <span className="font-bold text-black">personalised AI insights</span> on your child's unique tuition journey 
+                Get real-time, <span className="font-bold text-black">personalised AI insights</span> on your child's unique tuition journey
                 for <span className="font-bold text-black">every single session</span> – all in one place.
               </p>
 
@@ -132,11 +132,10 @@ function App() {
                   />
                   <button
                     type="submit"
-                    className={`absolute right-3 top-1/2 transform -translate-y-1/2 px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 inline-flex items-center gap-2 whitespace-nowrap border-2 border-white shadow-sm ${
-                      isLoading
-                        ? 'bg-green-500 text-white cursor-not-allowed'
-                        : 'bg-neon-gradient text-navy hover:shadow-neon-hover hover:scale-105'
-                    }`}
+                    className={`absolute right-3 top-1/2 transform -translate-y-1/2 px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 inline-flex items-center gap-2 whitespace-nowrap border-2 border-white shadow-sm ${isLoading
+                      ? 'bg-green-500 text-white cursor-not-allowed'
+                      : 'bg-neon-gradient text-navy hover:shadow-neon-hover hover:scale-105'
+                      }`}
                     disabled={isLoading}
                   >
                     {isLoading ? (
@@ -166,12 +165,12 @@ function App() {
                 <div className="relative max-w-lg lg:max-w-xl w-full">
                   {/* Clean Aesthetic Image */}
                   <div className="relative">
-                    <img 
+                    <img
                       src={MotherAndDaughter}
                       alt="Mother and daughter learning together"
                       className="w-full h-auto object-contain rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                     />
-                    
+
                     {/* Subtle aesthetic glow */}
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/5 via-transparent to-white/10 pointer-events-none"></div>
                   </div>
@@ -253,21 +252,21 @@ function App() {
 
           {/* CTA Buttons Below Platform */}
           <div className="text-center">
-            <button 
+            <button
               className="bg-neon-gradient text-navy px-6 py-3 rounded-lg font-bold text-base hover:shadow-neon-hover transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 mb-4"
               onClick={handleGetInTouchClick}
             >
               Let's Get in Touch
               <ArrowRight className="w-5 h-5" />
             </button>
-            
+
             <p className="text-gray-500 text-sm mb-0">Free demo call - no sign-up required!</p>
-            
+
             {/* TrakIt Logo */}
             <div className="mt-6">
-              <img 
-                src={TrakItLogo} 
-                alt="TrakIt Logo" 
+              <img
+                src={TrakItLogo}
+                alt="TrakIt Logo"
                 className="h-8 sm:h-10 lg:h-12 w-auto mx-auto"
               />
             </div>
