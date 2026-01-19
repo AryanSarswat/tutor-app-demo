@@ -1,4 +1,4 @@
-fimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Check, Flag, Mail, ArrowRight, Smartphone, Star } from 'lucide-react';
 import MotherAndDaughter from './assets/MotherDaughter_Cropped.jpg';
 import TrakItLogo from './assets/Main_logo.jpg';
@@ -7,6 +7,7 @@ import TrakItLogo from './assets/Main_logo.jpg';
 
 function App() {
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwnL1ClVadGeo7S_ay9Rhcn4bz5mlwSPSU_jcnFy4ZgNpIiMdVXz3q6x15vf7fGQCbl9g/exec';
+  const EARLY_MOVER_URL = 'https://forms.gle/vjVrjKz9JPLLeyTLA';
   const phoneNumber = "6580101713";
   const [email, setEmail] = useState('');
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -41,7 +42,7 @@ function App() {
 
   const handleClaimSpotClick = () => {
     console.log('Claim your spot now button clicked!');
-    // TODO: Implement logic for "Claim your spot now"
+    window.open(EARLY_MOVER_URL, '_blank');
   };
 
   const handleGetInTouchClick = () => {
