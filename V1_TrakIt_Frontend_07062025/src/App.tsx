@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Check, Flag, Mail, ArrowRight, Smartphone, Star } from 'lucide-react';
 import MotherAndDaughter from './assets/MotherDaughter_Cropped.jpg';
-import TrakItLogo from './assets/Main_logo.jpg';
+import TrakItLogo from './assets/Trakit_Logo_Main.png';
 
 
 
