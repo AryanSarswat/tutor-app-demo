@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Flag, Mail, ArrowRight, Smartphone, Star } from 'lucide-react';
+import { Check, Flag, Mail, ArrowRight, Smartphone, Star, Linkedin, Instagram } from 'lucide-react';
 import MotherAndDaughter from './assets/MotherDaughter_Cropped.jpg';
 import TrakItLogo from './assets/Trakit_Logo_Main.png';
 
@@ -8,6 +8,9 @@ import TrakItLogo from './assets/Trakit_Logo_Main.png';
 function App() {
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzVPgqhpibumxwWu4WsNQPApovy4lWKzrhetgTL_TJ4M8VeulwlknMi1k9xEzNc7qLhow/exec';
   const EARLY_MOVER_URL = 'https://forms.gle/vjVrjKz9JPLLeyTLA';
+  const TELEGRAM_BOT_URL = 'https://t.me/trakitai';
+  const LINKEDIN_URL = 'https://www.linkedin.com/company/trakit-sg/about';
+  const INSTAGRAM_URL = 'https://www.instagram.com/trakit.la?igsh=MXZoNXdpbDhtOGh1cQ%3D%3D&utm_source=qr';
   const phoneNumber = "6580101713";
   const [email, setEmail] = useState('');
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -124,18 +127,20 @@ function App() {
               {/* Email Capture Form with Larger Embedded Button */}
               <form onSubmit={handleEmailSubmit} className="mb-6">
                 <div className="relative">
-                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 z-10" />
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email address"
-                    className="w-full pl-12 pr-72 py-4 rounded-lg border-2 border-neon-green shadow-neon-subtle hover:shadow-neon-rich focus:shadow-neon-rich focus:outline-none text-gray-800 text-lg transition-all duration-300"
-                    required
-                  />
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 z-10" />
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email address"
+                      className="w-full pl-12 pr-4 sm:pr-72 py-4 rounded-lg border-2 border-neon-green shadow-neon-subtle hover:shadow-neon-rich focus:shadow-neon-rich focus:outline-none text-gray-800 text-lg transition-all duration-300"
+                      required
+                    />
+                  </div>
                   <button
                     type="submit"
-                    className={`absolute right-3 top-1/2 transform -translate-y-1/2 px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 inline-flex items-center gap-2 whitespace-nowrap border-2 border-white shadow-sm ${isLoading
+                    className={`w-full sm:w-auto mt-3 sm:mt-0 sm:absolute sm:right-3 sm:top-1/2 sm:transform sm:-translate-y-1/2 px-6 py-3 rounded-lg font-bold text-base transition-all duration-300 flex sm:inline-flex justify-center items-center gap-2 whitespace-nowrap border-2 border-white shadow-sm ${isLoading
                       ? 'bg-green-500 text-white cursor-not-allowed'
                       : 'bg-neon-gradient text-navy hover:shadow-neon-hover hover:scale-105'
                       }`}
@@ -265,6 +270,50 @@ function App() {
 
             <p className="text-gray-500 text-sm mb-0">Free demo call - no sign-up required!</p>
 
+            {/* Social Media Links */}
+            <div className="flex items-center justify-center gap-8 mt-6">
+              <a
+                href={TELEGRAM_BOT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black transition-all duration-300 transform hover:scale-125 hover:text-[#229ED9] hover:drop-shadow-md"
+                aria-label="Telegram"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m22 2-7 20-4-9-9-4Z" />
+                  <path d="M22 2 11 13" />
+                </svg>
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black transition-all duration-300 transform hover:scale-125 hover:text-[#0077b5] hover:drop-shadow-md"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-7 h-7" />
+              </a>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black transition-all duration-300 transform hover:scale-125 hover:text-[#E1306C] hover:drop-shadow-md"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-7 h-7" />
+              </a>
+            </div>
+
             {/* TrakIt Logo */}
             <div className="mt-6">
               <img
@@ -278,10 +327,13 @@ function App() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-black py-4 px-4 sm:px-6">
+      <footer className="bg-black py-8 px-4 sm:px-6 border-t border-gray-900">
         <div className="max-w-7xl mx-auto text-center">
+
+
+
           <p className="text-gray-400 text-sm">
-            © 2026 TrakIt. All rights reserved. Singapore born initiative 🇸🇬
+            © 2026 TrakIt. All rights reserved. Singapore born initiative <img src="https://flagcdn.com/w40/sg.png" alt="Singapore Flag" className="inline-block h-3 ml-2" />
           </p>
         </div>
       </footer>
