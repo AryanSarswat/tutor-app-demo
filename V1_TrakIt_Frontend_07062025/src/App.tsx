@@ -6,7 +6,7 @@ import TrakItLogo from './assets/Trakit_Logo_Main.png';
 
 
 function App() {
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw1HdufON72aolckacIcqidKcAdh-ZJyxgRiGlHMn7lV3nm6riN6ZN2d5M0lXDoTWMsSw/exec';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzVPgqhpibumxwWu4WsNQPApovy4lWKzrhetgTL_TJ4M8VeulwlknMi1k9xEzNc7qLhow/exec';
   const EARLY_MOVER_URL = 'https://forms.gle/vjVrjKz9JPLLeyTLA';
   const phoneNumber = "6580101713";
   const [email, setEmail] = useState('');
@@ -29,6 +29,8 @@ function App() {
           source: 'website'
         })
       });
+
+      console.log(response);
 
       setEmail('');
       setIsLoading(false);
